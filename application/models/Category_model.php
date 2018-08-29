@@ -5,7 +5,6 @@ class Category_model extends CI_Model
     {
         parent::__construct();
     }
-
     function addCategory($pdata)
     {
         $this->db->set("category_created_on", "NOW()", false);

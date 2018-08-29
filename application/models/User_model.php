@@ -1,5 +1,4 @@
 <?php
-
 class User_model extends CI_Model
 {
     function __construct()
@@ -7,7 +6,6 @@ class User_model extends CI_Model
         parent::__construct();
     }
     /*Check User Before Add*/
-
     function isUserExists($email)
     {
         $this->db->select("u.user_email");
@@ -18,8 +16,6 @@ class User_model extends CI_Model
         }
         return false;
     }
-
-
     /*Check Token -Forgot password*/
     function getUserByTocken($tocken)
     {
@@ -31,27 +27,22 @@ class User_model extends CI_Model
         }
         return false;
     }
-
-
     /*User CRUD Funcs*/
     function addUser($pdata)
     {
         $this->db->insert("tbl_users", $pdata);
         return $this->db->insert_id();
     }
-
     function updateUser($data, $user_id)
     {
         $this->db->where("user_id", $user_id);
         return $this->db->update("tbl_users", $data);
     }
-
     function updatePasswordByToken($data, $token)
     {
         $this->db->where("user_reset_token", $token);
         return $this->db->update("tbl_users", $data);
     }
-
     function getUserList($s = array(), $mode = 'DATA')
     {
         if ($mode == "CNT") {
@@ -74,7 +65,6 @@ class User_model extends CI_Model
         }
         return false;
     }
-
     function getUserById($user_id)
     {
         $this->db->select("u.*");
@@ -84,7 +74,6 @@ class User_model extends CI_Model
             return $query->row_array();
         }
     }
-
     function getUserByEmail($email)
     {
         $this->db->select("u.*");
@@ -94,12 +83,9 @@ class User_model extends CI_Model
             return $query->row_array();
         }
     }
-
     function delUser($user_id)
     {
         $this->db->where("user_id", $user_id);
         return $this->db->delete("tbl_users");
     }
-
-
 } ?>

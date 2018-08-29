@@ -1,12 +1,10 @@
 <?php
-
 class Api_model extends CI_Model
 {
     function __construct()
     {
         parent::__construct();
     }
-
     function addGallery($pdata)
     {
         $this->db->set("created_on", "NOW()", false);
@@ -14,36 +12,27 @@ class Api_model extends CI_Model
         $this->db->insert("tbl_gallery", $pdata);
         return $this->db->insert_id();
     }
-
     function addAbout($pdata)
     {
         $this->db->set("created_on", "NOW()", false);
         $this->db->insert("tbl_about", $pdata);
         return $this->db->insert_id();
     }
-
-
-
     function updateGallery($pdata, $gallery_id)
     {
         $this->db->where("gallery_id", $gallery_id);
         return $this->db->update("tbl_gallery", $pdata);
     }
-
     function updateAbout($pdata, $pk_id)
     {
         $this->db->where("pk_id", $pk_id);
         return $this->db->update("tbl_about", $pdata);
     }
-
-
-
     function delGallery($gallery_id)
     {
         $this->db->where("gallery_id", $gallery_id);
         return $this->db->delete("tbl_gallery");
     }
-
     function getGalleryById($gallery_id)
     {
         $this->db->select("m.*");
@@ -54,7 +43,6 @@ class Api_model extends CI_Model
         }
         return false;
     }
-
     function getGalleryBySlug($str)
     {
         $this->db->select("m.*");
@@ -65,7 +53,6 @@ class Api_model extends CI_Model
         }
         return false;
     }
-
     function getCategories()
     {
         $this->db->select("c.category_name,c.category_id");
@@ -75,9 +62,8 @@ class Api_model extends CI_Model
         }
         return false;
     }
-
-
-    function getCategoryName($id){
+    function getCategoryName($id)
+    {
         $this->db->select("c.category_name");
         $this->db->where("c.category_id", $id);
         $query = $this->db->get("category_tbl c");
@@ -86,9 +72,6 @@ class Api_model extends CI_Model
         }
         return false;
     }
-
-
-
     function searchGallery($s = array(), $mode = "DATA")
     {
         if ($mode == "CNT") {
