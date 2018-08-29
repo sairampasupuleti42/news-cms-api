@@ -15,20 +15,20 @@ class Category_model extends CI_Model
 
     function updateCategory($pdata, $category_id)
     {
-        $this->db->where("category_id", $category_id);
+        $this->db->where("id", $category_id);
         return $this->db->update("tbl_categories", $pdata);
     }
 
     function delCategory($category_id)
     {
-        $this->db->where("category_id", $category_id);
+        $this->db->where("id", $category_id);
         return $this->db->delete("tbl_categories");
     }
 
-    function getCategoryById($user_id)
+    function getCategoryById($category_id)
     {
         $this->db->select("c.*");
-        $this->db->where("c.category_id", $user_id);
+        $this->db->where("c.id", $category_id);
         $query = $this->db->get("tbl_categories c");
         if ($query->num_rows() > 0) {
             return $query->row_array();
@@ -39,7 +39,7 @@ class Category_model extends CI_Model
     function checkCategoryInDB($category_name)
     {
         $this->db->select('*');
-        $this->db->where('category_name', $category_name);
+        $this->db->where('name', $category_name);
         $query = $this->db->get("tbl_categories c");
         if ($query->num_rows() > 0) {
             return true;

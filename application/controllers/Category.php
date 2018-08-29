@@ -35,8 +35,6 @@ class Category extends MY_Controller
         } else {
             $categories = $this->category->searchCategories();
             echo _success('Success', 'categories', $categories, 200);
-
-
         }
     }
 
@@ -47,7 +45,8 @@ class Category extends MY_Controller
         } else if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
             echo "Valid_DELETE";
         } else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            echo "Valid_GET";
+            $category = $this->category->getCategoryById($id);
+            echo _success('Success', 'category', $category, 200);
         } else {
             echo "Invalid";
         }

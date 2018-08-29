@@ -516,9 +516,7 @@ if (!function_exists("_logged")) {
 }
 function _success($msg = '', $result_key, $result_value, $status = 200)
 {
-
     return json_encode(array("msg" => $msg,"status" => $status,$result_key => $result_value));
-
 }
 
 function _error($error, $status = 404)
