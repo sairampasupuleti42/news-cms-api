@@ -514,34 +514,16 @@ if (!function_exists("_logged")) {
         }
     }
 }
-function _success($msg = '', $input, $status = 200)
+function _success($msg = '', $result_key, $result_value, $status = 200)
 {
-    if (isset($input) && !empty($input)) {
-        return json_encode(
-            array(
-                "msg" => $msg,
-                "status" => $status,
-                "result" => $input
-            )
-        );
-    } else {
-        return json_encode(
-            array(
-                "msg" => $msg,
-                "status" => $status,
-            )
-        );
-    }
+
+    return json_encode(array("msg" => $msg,"status" => $status,$result_key => $result_value));
+
 }
 
 function _error($error, $status = 404)
 {
-    return json_encode(
-        array(
-            "msg" => $error,
-            "status" => $status
-        )
-    );
+    return json_encode(array("msg" => $error,"status" => $status));
 }
 
 function requestIsNotFromMobile()
@@ -580,6 +562,7 @@ function validPostHeader()
         return ConvertArrayToObject($data);
     }
 }
+
 function base64ToImg($string, $path, $file_name, $mime_type = 'png')
 {
     if (!is_dir($path))
@@ -588,21 +571,24 @@ function base64ToImg($string, $path, $file_name, $mime_type = 'png')
     file_put_contents($uploadFile, base64_decode($string));
     return base_url($uploadFile);
 }
-function removeFolder($dirname) {
+
+function removeFolder($dirname)
+{
     if (is_dir($dirname))
         $dir_handle = opendir($dirname);
     if (!$dir_handle)
         return false;
-    while($file = readdir($dir_handle)) {
+    while ($file = readdir($dir_handle)) {
         if ($file != "." && $file != "..") {
-            if (!is_dir($dirname."/".$file))
-                unlink($dirname."/".$file);
+            if (!is_dir($dirname . "/" . $file))
+                unlink($dirname . "/" . $file);
             else
-                removeFolder($dirname.'/'.$file);
+                removeFolder($dirname . '/' . $file);
         }
     }
     closedir($dir_handle);
     rmdir($dirname);
     return true;
 }
+
 ?>
