@@ -27,6 +27,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+.idea/workspace.xml
 
 
 package-lock.json
