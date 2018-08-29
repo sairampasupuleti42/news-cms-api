@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="287d1511-e792-4ed6-ac36-6807359d9999" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/application/controllers/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Api_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Api_model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Category_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Category_model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Posts_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Posts_model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/User_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/User_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/database.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +59,7 @@
           <entry key="gitignore" value="2" />
           <entry key="html" value="1" />
           <entry key="md" value="1" />
-          <entry key="php" value="36" />
+          <entry key="php" value="37" />
           <entry key="sql" value="2" />
           <entry key="tbl_categories" value="1" />
         </counts>
@@ -73,7 +69,7 @@
           <entry key="Database Element" value="1" />
           <entry key="HTML" value="1" />
           <entry key="Markdown" value="1" />
-          <entry key="PHP" value="36" />
+          <entry key="PHP" value="37" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Scratch" value="2" />
         </counts>
@@ -99,7 +95,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="51">
               <caret line="18" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="18" />
               <folding>
                 <element signature="n#_hash#0;n#Api#0;n#!!top" />
@@ -113,10 +109,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/config/database.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Category.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -143,7 +148,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/config/database.php" />
         <option value="$PROJECT_DIR$/application/helpers/unihelper.php" />
         <option value="$PROJECT_DIR$/application/core/MY_Controller.php" />
         <option value="$PROJECT_DIR$/application/controllers/Test.php" />
@@ -156,6 +160,7 @@
         <option value="$PROJECT_DIR$/application/models/Posts_model.php" />
         <option value="$PROJECT_DIR$/application/models/User_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/Category.php" />
+        <option value="$PROJECT_DIR$/application/config/database.php" />
       </list>
     </option>
   </component>
@@ -190,6 +195,12 @@
               <item name="pslv" type="b2602c69:ProjectViewProjectNode" />
               <item name="pslv" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pslv" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pslv" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pslv" type="b2602c69:ProjectViewProjectNode" />
@@ -256,12 +267,12 @@
       <workItem from="1533622036968" duration="1232000" />
       <workItem from="1533795526617" duration="1000" />
       <workItem from="1535105529317" duration="21000" />
-      <workItem from="1535533551203" duration="3950000" />
+      <workItem from="1535533551203" duration="4169000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18091000" />
+    <option name="totallyTimeSpent" value="18310000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -312,13 +323,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/helpers/SimpleImage.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/core/MY_Controller.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -420,9 +424,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="51">
           <caret line="18" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="18" />
           <folding>
             <element signature="n#_hash#0;n#Api#0;n#!!top" />
@@ -434,10 +445,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Category.php">
+    <entry file="file://$PROJECT_DIR$/application/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        <state relative-caret-position="187">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
         </state>
       </provider>
     </entry>
