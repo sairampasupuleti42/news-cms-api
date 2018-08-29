@@ -5,10 +5,7 @@ class Category_model extends CI_Model
     {
         parent::__construct();
     }
-    function truncate($table)
-    {
-        $this->db->truncate($table);
-    }
+
     function addCategory($pdata)
     {
         $this->db->set("category_created_on", "NOW()", false);

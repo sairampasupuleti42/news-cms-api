@@ -7,70 +7,6 @@ class Api_model extends CI_Model
         parent::__construct();
     }
 
-    function truncate($table)
-    {
-        $this->db->truncate($table);
-    }
-
-    function checkUserEmail($email, $user_id = '')
-    {
-        $this->db->select("m.*");
-        $this->db->where("email", $email);
-        if (!empty($user_id)) {
-            $this->db->where("user_id !=", $user_id);
-        }
-        $query = $this->db->get("tbl_users m");
-        if ($query->num_rows() > 0) {
-            return true;
-        }
-        return false;
-    }
-
-
-    function updateUser($pdata, $user_id)
-    {
-        $this->db->where("user_id", $user_id);
-        return $this->db->update("tbl_users", $pdata);
-    }
-
-    function delUser($user_id)
-    {
-        $this->db->where("user_id", $user_id);
-        return $this->db->delete("tbl_users");
-    }
-
-    function getUserById($user_id)
-    {
-        $this->db->select("m.*");
-        $this->db->where("m.user_id", $user_id);
-
-        $query = $this->db->get("tbl_users m");
-        if ($query->num_rows() > 0) {
-            return $query->row_array();
-        }
-        return false;
-    }
-
-    function userLogin($email, $pwd)
-    {
-        $this->db->select("m.*");
-        $this->db->where("email", $email);
-        $this->db->where("password", $pwd);
-        $query = $this->db->get("tbl_users m");
-        if ($query->num_rows() > 0) {
-            return $query->row_array();
-        }
-        return false;
-    }
-
-    function addPost($pdata)
-    {
-        $this->db->set("created_on", "NOW()", false);
-        $this->db->set("created_by", $_SESSION['USER_ID'], false);
-        $this->db->insert("tbl_posts", $pdata);
-        return $this->db->insert_id();
-    }
-
     function addGallery($pdata)
     {
         $this->db->set("created_on", "NOW()", false);
@@ -86,11 +22,7 @@ class Api_model extends CI_Model
         return $this->db->insert_id();
     }
 
-    function updatePost($pdata, $post_id)
-    {
-        $this->db->where("post_id", $post_id);
-        return $this->db->update("tbl_posts", $pdata);
-    }
+
 
     function updateGallery($pdata, $gallery_id)
     {
@@ -104,11 +36,7 @@ class Api_model extends CI_Model
         return $this->db->update("tbl_about", $pdata);
     }
 
-    function delPost($post_id)
-    {
-        $this->db->where("post_id", $post_id);
-        return $this->db->delete("tbl_posts");
-    }
+
 
     function delGallery($gallery_id)
     {
@@ -148,50 +76,7 @@ class Api_model extends CI_Model
         return false;
     }
 
-    function searchPosts($s = array(), $mode = "DATA")
-    {
-        if ($mode == "CNT") {
-            $this->db->select("COUNT(1) as CNT");
-        } else {
-            $this->db->select("p.*");
-        }
 
-        if (isset($s['limit']) && isset($s['offset'])) {
-            $this->db->limit($s['limit'], $s['offset']);
-        }
-        if (isset($s['post_id'])) {
-            $this->db->where("p.post_id !=", $s['post_id']);
-        }
-        if (isset($s['language'])) {
-            $this->db->where("p.language", $s['language']);
-        }
-        if (isset($s['cat_id'])) {
-            $this->db->where("p.cat_id", $s['cat_id']);
-        }
-        $this->db->group_by("p.post_id");
-        $this->db->order_by("p.post_id DESC");
-        $query = $this->db->get("posts_tbl p");
-
-        if ($query->num_rows() > 0) {
-            if ($mode == "CNT") {
-                $row = $query->row_array();
-                return $row['CNT'];
-            }
-            return $query->result_array();
-        }
-        return false;
-    }
-
-    function getPostById($post_id)
-    {
-        $this->db->select("p.*");
-        $this->db->where("p.post_id", $post_id);
-        $query = $this->db->get("posts_tbl p");
-        if ($query->num_rows() > 0) {
-            return $query->row_array();
-        }
-        return false;
-    }
     function getCategoryName($id){
         $this->db->select("c.category_name");
         $this->db->where("c.category_id", $id);
@@ -202,16 +87,7 @@ class Api_model extends CI_Model
         return false;
     }
 
-    function getPostBySlug($slug)
-    {
-        $this->db->select("m.*");
-        $this->db->where("m.title_keywords LIKE '%" . str_replace('-', ' ', $slug) . "%'");
-        $query = $this->db->get("posts_tbl m");
-        if ($query->num_rows() > 0) {
-            return $query->row_array();
-        }
-        return false;
-    }
+
 
     function searchGallery($s = array(), $mode = "DATA")
     {
