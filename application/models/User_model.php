@@ -6,24 +6,12 @@ class User_model extends CI_Model
     {
         parent::__construct();
     }
-
-
     /*Check User Before Add*/
-    function checkUser($email)
-    {
-        $this->db->select("u.email");
-        $this->db->where("u.email", $email);
-        $query = $this->db->get("tbl_users u");
-        if ($query->num_rows() > 0) {
-            return $query->row_array();
-        }
-        return false;
-    }
 
-    function isUserNotThere($email)
+    function isUserExists($email)
     {
-        $this->db->select("u.email");
-        $this->db->where("u.email", $email);
+        $this->db->select("u.user_email");
+        $this->db->where("u.user_email", $email);
         $query = $this->db->get("tbl_users u");
         if ($query->num_rows() < 1) {
             return true;
@@ -31,29 +19,19 @@ class User_model extends CI_Model
         return false;
     }
 
-    function isEmailExists($email)
-    {
-        $this->db->select("u.user_id,u.email,u.first_name,u.last_name");
-        $this->db->where("u.email", $email);
-        $query = $this->db->get("tbl_users u");
-
-        if ($query->num_rows() === 1) {
-            return $query->row_array();
-        }
-        return false;
-    }
 
     /*Check Token -Forgot password*/
     function getUserByTocken($tocken)
     {
         $this->db->select("u.*");
-        $this->db->where("u.reset_tocken", $tocken);
+        $this->db->where("u.user_reset_token", $tocken);
         $query = $this->db->get("tbl_users u");
         if ($query->num_rows() > 0) {
             return $query->row_array();
         }
         return false;
     }
+
 
     /*User CRUD Funcs*/
     function addUser($pdata)
@@ -70,7 +48,7 @@ class User_model extends CI_Model
 
     function updatePasswordByToken($data, $token)
     {
-        $this->db->where("reset_token", $token);
+        $this->db->where("user_reset_token", $token);
         return $this->db->update("tbl_users", $data);
     }
 
@@ -110,7 +88,7 @@ class User_model extends CI_Model
     function getUserByEmail($email)
     {
         $this->db->select("u.*");
-        $this->db->where("u.email", $email);
+        $this->db->where("u.user_email", $email);
         $query = $this->db->get("tbl_users u");
         if ($query->num_rows() > 0) {
             return $query->row_array();
@@ -120,7 +98,7 @@ class User_model extends CI_Model
     function delUser($user_id)
     {
         $this->db->where("user_id", $user_id);
-        return $this->db->delete("login_table");
+        return $this->db->delete("tbl_users");
     }
 
 
