@@ -46,9 +46,20 @@ class Category_model extends CI_Model
         }
     }
 
-    function searchCategories()
+    function searchCategories($s = array(), $mode = "DATA")
     {
-        $this->db->select('*');
+        if ($mode == "CNT") {
+            $this->db->select("COUNT(1) as CNT");
+        } else {
+            $this->db->select("c.*");
+        }
+        if (isset($s['limit']) && isset($s['offset'])) {
+            $this->db->limit($s['limit'], $s['offset']);
+        }
+        if(isset($s['language_id']) && !empty($s['language_id'])){
+            $this->db->where('language_id',$s['language_id']);
+        }
+        $this->db->order_by("c.id DESC");
         $query = $this->db->get("tbl_categories c");
         if ($query->num_rows() > 0) {
             return $query->result_array();

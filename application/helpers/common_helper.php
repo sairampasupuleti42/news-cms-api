@@ -26,17 +26,6 @@ if (!function_exists("getMessage")) {
     }
 
 }
-if (!function_exists("get_active_link")) {
-    function get_active_link($urls = [])
-    {
-        foreach ($urls as $url) {
-            if (explode('/', $_SERVER['REQUEST_URI'])[2] == $url) {
-                return "class='active'";
-            }
-        }
-    }
-}
-
 if (!function_exists("generatePassword")) {
 
     function generatePassword($length = 8)
@@ -481,39 +470,6 @@ if (!function_exists("getThumbs")) {
         return $thumbs;
     }
 }
-
-if (!function_exists("currentModuleView")) {
-    function currentModuleView($module)
-    {
-        return APPPATH . 'modules/' . $module . '/views/';
-    }
-}
-
-
-if (!function_exists("isLoginExists")) {
-    function isLoginExists()
-    {
-        if (isset($_SESSION['LAST_REQUEST_TIME'])) {
-            if (time() - $_SESSION['LAST_REQUEST_TIME'] > 700) {
-                $_SESSION = array();
-                session_destroy();
-                redirect(base_url() . '/admin/logout/?session_expired=1');
-            }
-        }
-        $_SESSION['LAST_REQUEST_TIME'] = time();
-    }
-}
-if (!function_exists("_logged")) {
-    function _logged()
-    {
-        if (isset($_SESSION)) {
-            if (empty($_SESSION['USER_ID'])) {
-                session_destroy();
-                redirect(base_url() . 'admin/logout/');
-            }
-        }
-    }
-}
 function _success($msg = '', $result_key, $result_value, $status = 200)
 {
     return json_encode(array("msg" => $msg,"status" => $status,$result_key => $result_value));
@@ -543,6 +499,7 @@ function ConvertObjectToArray($data)
     return (array)$data;
 }
 
+
 function validPostHeader()
 {
     $rawData = file_get_contents("php://input");
@@ -561,7 +518,7 @@ function validPostHeader()
     }
 }
 
-function base64ToImg($string, $path, $file_name, $mime_type = 'png')
+function base64ToImg($string, $path, $file_name, $mime_type = 'jpg')
 {
     if (!is_dir($path))
         mkdir($path, 0777, true);
