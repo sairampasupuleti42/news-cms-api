@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="287d1511-e792-4ed6-ac36-6807359d9999" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/application/controllers/Language.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/models/Language_model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/autoload.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/helpers/common_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/helpers/common_helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Category_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Category_model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Posts_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Posts_model.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +71,7 @@
           <entry key="gitignore" value="3" />
           <entry key="html" value="1" />
           <entry key="md" value="1" />
-          <entry key="php" value="67" />
+          <entry key="php" value="70" />
           <entry key="sql" value="2" />
           <entry key="tbl_access_logs" value="1" />
           <entry key="tbl_categories" value="1" />
@@ -88,7 +82,7 @@
           <entry key="Database Element" value="2" />
           <entry key="HTML" value="1" />
           <entry key="Markdown" value="1" />
-          <entry key="PHP" value="67" />
+          <entry key="PHP" value="70" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="Scratch" value="2" />
         </counts>
@@ -97,14 +91,14 @@
         <counts>
           <entry key="gitignore" value="71" />
           <entry key="md" value="62" />
-          <entry key="php" value="6739" />
+          <entry key="php" value="6825" />
           <entry key="sql" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="62" />
-          <entry key="PHP" value="6739" />
+          <entry key="PHP" value="6825" />
           <entry key="PLAIN_TEXT" value="71" />
           <entry key="SQL" value="11" />
         </counts>
@@ -113,35 +107,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/Post.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="492">
+              <caret line="118" column="35" lean-forward="true" selection-start-line="118" selection-start-column="35" selection-end-line="118" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/Posts_model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="73" column="26" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/helpers/common_helper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="520" column="66" selection-start-line="520" selection-start-column="66" selection-end-line="520" selection-end-column="66" />
+            <state relative-caret-position="254">
+              <caret line="524" column="42" selection-start-line="524" selection-start-column="42" selection-end-line="524" selection-end-column="42" />
               <folding>
                 <element signature="e#100#107#1" expanded="true" />
                 <element signature="e#99#106#1" expanded="true" />
                 <element signature="e#98#105#1" expanded="true" />
                 <element signature="e#98#105#1" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/config/autoload.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="91" column="32" selection-start-line="91" selection-start-column="32" selection-end-line="91" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -195,6 +189,7 @@
         <option value="$PROJECT_DIR$/application/controllers/Category.php" />
         <option value="$PROJECT_DIR$/application/core/MY_Controller.php" />
         <option value="$PROJECT_DIR$/application/config/routes.php" />
+        <option value="$PROJECT_DIR$/application/config/autoload.php" />
         <option value="$PROJECT_DIR$/application/helpers/common_helper.php" />
         <option value="$PROJECT_DIR$/application/controllers/Post.php" />
       </list>
@@ -339,12 +334,12 @@
       <workItem from="1535533551203" duration="4500000" />
       <workItem from="1535540438482" duration="8757000" />
       <workItem from="1535605498831" duration="28000" />
-      <workItem from="1535620774396" duration="15903000" />
+      <workItem from="1535620774396" duration="18044000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43329000" />
+    <option name="totallyTimeSpent" value="45470000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -359,6 +354,30 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17776097" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" x="22" y="263" width="1322" height="201" id="Database Console" order="0" weight="0.14075287" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="bottom" id="Run" order="3" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.3289689" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="File Transfer" order="10" weight="0.3289689" />
+      <window_info anchor="bottom" id="Database Changes" order="11" weight="0.3289689" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50075644" side_tool="true" weight="0.14729951" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info active="true" anchor="right" id="Remote Host" order="3" sideWeight="0.497545" visible="true" weight="0.19515885" />
+      <window_info anchor="right" id="Database" order="4" sideWeight="0.492635" weight="0.14599092" />
+      <window_info anchor="right" id="Terminal" order="5" sideWeight="0.502455" side_tool="true" visible="true" weight="0.19515885" />
+    </layout>
+    <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17776097" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -381,7 +400,7 @@
       <window_info anchor="right" id="Remote Host" order="3" sideWeight="0.49918166" weight="0.3184569" />
       <window_info anchor="right" id="Database" order="4" sideWeight="0.4942717" visible="true" weight="0.47655067" />
       <window_info anchor="right" id="Terminal" order="5" sideWeight="0.5057283" side_tool="true" visible="true" weight="0.47655067" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -522,20 +541,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/Posts_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -543,16 +548,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="91" column="32" selection-start-line="91" selection-start-column="32" selection-end-line="91" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="29" column="17" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/helpers/common_helper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="520" column="66" selection-start-line="520" selection-start-column="66" selection-end-line="520" selection-end-column="66" />
+        <state relative-caret-position="254">
+          <caret line="524" column="42" selection-start-line="524" selection-start-column="42" selection-end-line="524" selection-end-column="42" />
           <folding>
             <element signature="e#100#107#1" expanded="true" />
             <element signature="e#99#106#1" expanded="true" />
             <element signature="e#98#105#1" expanded="true" />
             <element signature="e#98#105#1" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="118" column="35" lean-forward="true" selection-start-line="118" selection-start-column="35" selection-end-line="118" selection-end-column="35" />
         </state>
       </provider>
     </entry>

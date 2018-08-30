@@ -522,9 +522,9 @@ function base64ToImg($string, $path, $file_name, $mime_type = 'jpg')
 {
     if (!is_dir($path))
         mkdir($path, 0777, true);
-    $uploadFile = $path . '/' . md5($file_name) . '.' . $mime_type;
+    $uploadFile = $path . '/' . $file_name . '.' . $mime_type;
     file_put_contents($uploadFile, base64_decode($string));
-    return base_url($uploadFile);
+    return $uploadFile;
 }
 
 function removeFolder($dirname)

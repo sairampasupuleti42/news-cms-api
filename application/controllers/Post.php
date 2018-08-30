@@ -35,9 +35,10 @@ class Post extends MY_Controller
                 $target = "./uploads/posts/";
                 $image = $raw['image'];
                 $exploded_img = explode(',', $image);
-                $image_name=$complete_url . time() ;
-                base64ToImg($exploded_img[1], $target, $image_name , 'jpg');
-                $pdata['image'] = base_url() . (str_replace('./', '', $target));;
+
+                $image_name = $complete_url . time();
+                $image_path=base64ToImg($exploded_img[1], $target, $image_name, 'jpg');
+                $pdata['image'] = $image_path;
                 $pdata['language_id'] = $l_id;
                 $pdata['category_id'] = $c_id;
                 $pdata['description'] = !empty($raw['description']) ? $raw['description'] : '';
@@ -78,34 +79,72 @@ class Post extends MY_Controller
     function get($id_or_permalink)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
-            echo "Valid_PUT";
+            $post = file_get_contents("php://input");
+            if (!empty($post)) {
+                $raw = (array)json_decode($post);
+                $title = $raw['title'];
+                $permalink = !empty($raw['permalink']) ? $raw['permalink'] : $title;
+                $l_id = $raw['language_id'];
+                $c_id = $raw['category_id'];
+                $c = $this->category->getCategoryById($c_id);
+                $pdata['title'] = $title;
+                $pdata['permalink'] = slugify($permalink);
+                $complete_url = $c['permalink'] . '/' . slugify($permalink);
+                $pdata['permalink_url'] = $complete_url;
+                $target = "./uploads/posts/";
+                $image = $raw['image'];
+                $exploded_img = explode(',', $image);
+                $image_name = $complete_url . time();
+                $image_path=base64ToImg($exploded_img[1], $target, $image_name, 'jpg');
+                $pdata['image'] = $image_path;
+                $pdata['language_id'] = $l_id;
+                $pdata['category_id'] = $c_id;
+                $pdata['description'] = !empty($raw['description']) ? $raw['description'] : '';
+                $pdata['tags'] = !empty($raw['tags']) ? $raw['tags'] : '';
+                $pdata['video'] = !empty($raw['video']) ? $raw['video'] : '';
+                if (!$this->post->checkPostInDB($complete_url)) {
+                    if (is_numeric($id_or_permalink)) {
+                        $id = $id_or_permalink;
+                        $this->post->udpatePost($pdata, $id);
+                        echo _success('Successfully updated !', 'post', $pdata, 200);
+                    }
+                } else {
+                    echo _error("This post already exists in DB. If Content is different then change permalink text !", 409);
+                }
+            } else {
+                echo _error("Invalid parameters", 404);
+            }
         } else if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
             echo "Valid_DELETE";
         } else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            if(is_numeric($id_or_permalink)){
-                $id=$id_or_permalink;
-                $post=$this->post->getPostById($id);
-                echo _success('Success','post',$post,200);
-            }else{
-                $permalink=$id_or_permalink;
-                $post=$this->post->getPostBySlug($permalink);
-                echo _success('Success','post',$post,200);
+            if (is_numeric($id_or_permalink)) {
+                $id = $id_or_permalink;
+                $post = $this->post->getPostById($id);
+                echo _success('Success', 'post', $post, 200);
+            } else {
+                $permalink = $id_or_permalink;
+                $post = $this->post->getPostBySlug($permalink);
+                echo _success('Success', 'post', $post, 200);
             }
         } else {
             echo "Invalid";
         }
     }
 
-    function custom($language_id = '', $category_id='')
+    function custom($language_id = '', $category_id = '')
     {
         $posts = $this->post->searchPosts(array('category_id' => $category_id, 'language_id' => $language_id));
         echo _success('Success', 'posts', $posts, 200);
     }
-    function custom_category($category_id){
+
+    function custom_category($category_id)
+    {
         $posts = $this->post->searchPosts(array('category_id' => $category_id));
         echo _success('Success', 'posts', $posts, 200);
     }
-    function custom_language($language_id){
+
+    function custom_language($language_id)
+    {
         $posts = $this->post->searchPosts(array('language_id' => $language_id));
         echo _success('Success', 'posts', $posts, 200);
     }
