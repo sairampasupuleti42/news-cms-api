@@ -92,4 +92,8 @@ class Category extends MY_Controller
             echo "Invalid";
         }
     }
+    function parent_categories(){
+        $categories = $this->category->searchCategories(array('parent'=>'true'));
+        echo _success('Success', 'categories', $categories, 200);
+    }
 }

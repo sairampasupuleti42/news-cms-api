@@ -59,6 +59,9 @@ class Category_model extends CI_Model
         if(isset($s['language_id']) && !empty($s['language_id'])){
             $this->db->where('language_id',$s['language_id']);
         }
+        if(isset($s['parent']) && !empty($s['parent'])){
+            $this->db->where('c.parent_id=0');
+        }
         $this->db->order_by("c.id DESC");
         $query = $this->db->get("tbl_categories c");
         if ($query->num_rows() > 0) {
