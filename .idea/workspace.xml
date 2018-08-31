@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="287d1511-e792-4ed6-ac36-6807359d9999" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Language.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Language.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Category_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Category_model.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,14 +92,14 @@
         <counts>
           <entry key="gitignore" value="71" />
           <entry key="md" value="62" />
-          <entry key="php" value="7240" />
+          <entry key="php" value="7271" />
           <entry key="sql" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="62" />
-          <entry key="PHP" value="7240" />
+          <entry key="PHP" value="7271" />
           <entry key="PLAIN_TEXT" value="71" />
           <entry key="SQL" value="11" />
         </counts>
@@ -108,35 +107,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Category.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/config/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="18" column="61" lean-forward="true" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/Category_model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="66" column="8" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -176,10 +147,10 @@
         <option value="$PROJECT_DIR$/application/helpers/common_helper.php" />
         <option value="$PROJECT_DIR$/application/controllers/Post.php" />
         <option value="$PROJECT_DIR$/application/controllers/User.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Category.php" />
-        <option value="$PROJECT_DIR$/application/config/routes.php" />
         <option value="$PROJECT_DIR$/application/models/Category_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/Language.php" />
+        <option value="$PROJECT_DIR$/application/config/routes.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Category.php" />
       </list>
     </option>
   </component>
@@ -300,12 +271,12 @@
       <workItem from="1535605498831" duration="28000" />
       <workItem from="1535620774396" duration="18707000" />
       <workItem from="1535694841046" duration="764000" />
-      <workItem from="1535708469355" duration="5369000" />
+      <workItem from="1535708469355" duration="7575000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52266000" />
+    <option name="totallyTimeSpent" value="54472000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -318,9 +289,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18229954" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18229954" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" x="22" y="263" width="1322" height="201" id="Database Console" order="0" weight="0.14075287" />
@@ -339,9 +309,9 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Remote Host" order="3" sideWeight="0.4942717" visible="true" weight="0.16641453" />
+      <window_info anchor="right" id="Remote Host" order="3" sideWeight="0.4942717" visible="true" weight="0.505295" />
       <window_info anchor="right" id="Database" order="4" sideWeight="0.492635" weight="0.14599092" />
-      <window_info anchor="right" id="Terminal" order="5" sideWeight="0.5057283" side_tool="true" visible="true" weight="0.16641453" />
+      <window_info active="true" anchor="right" id="Terminal" order="5" sideWeight="0.5057283" side_tool="true" visible="true" weight="0.505295" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17776097" />
@@ -534,20 +504,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Category_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="66" column="8" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="18" column="61" lean-forward="true" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Language.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -557,8 +513,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Category.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="60" />
+        <state relative-caret-position="282">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="18" column="69" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Category_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
         </state>
       </provider>
     </entry>

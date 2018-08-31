@@ -16,7 +16,7 @@ $route['api/languages/(:num)']="language/get/$1";
 $route['api/categories']="category/index";
 #GET, PUT and DELETE
 $route['api/categories/(:num)']="category/get/$1";
-$route['api/categories/parent']="category/parent-categories";
+$route['api/categories/parent/(:num)']="category/parent-categories/$1";
 
 //---------------Posts------------------
 
