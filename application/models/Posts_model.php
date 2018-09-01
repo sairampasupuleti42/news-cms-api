@@ -11,6 +11,11 @@ class Posts_model extends CI_Model
         $this->db->insert("tbl_posts", $pdata);
         return $this->db->insert_id();
     }
+    function addCategoryPost($pdata)
+    {
+        $this->db->insert("tbl_category_posts", $pdata);
+        return $this->db->insert_id();
+    }
     function updatePost($pdata, $post_id)
     {
         $this->db->where("id", $post_id);

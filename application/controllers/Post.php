@@ -1,6 +1,6 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-header('Access-Control-Allow-Headers:Content-Type');
+header('Access-Control-Allow-Headers:Content-Type,NG-AUTH');
 header("Access-Control-Allow-Methods: GET, POST,PUT,DELETE");
 header('Content-Type: text/html; charset=utf-8');
 ini_set('default_charset', 'utf-8');
@@ -25,12 +25,13 @@ class Post extends MY_Controller
                 $raw = (array)json_decode($post);
                 $title = $raw['title'];
                 $permalink = !empty($raw['permalink']) ? $raw['permalink'] : $title;
+                $pdata['is_highlight'] = (!empty($raw['is_highlight']) && $raw['is_highlight']=='1') ? 'Yes' : 'No';
                 $l_id = $raw['language_id'];
                 $c_id = $raw['category_id'];
-                $c = $this->category->getCategoryById($c_id);
+
                 $pdata['title'] = $title;
                 $pdata['permalink'] = slugify($permalink);
-                $complete_url = $c['permalink'] . '/' . slugify($permalink);
+                $complete_url = slugify($permalink);
                 $pdata['permalink_url'] = $complete_url;
                 $target = "./uploads/posts/";
                 $image = $raw['image'];
@@ -40,12 +41,24 @@ class Post extends MY_Controller
                 $image_path=base64ToImg($exploded_img[1], $target, $image_name, 'jpg');
                 $pdata['image'] = $image_path;
                 $pdata['language_id'] = $l_id;
-                $pdata['category_id'] = $c_id;
                 $pdata['description'] = !empty($raw['description']) ? $raw['description'] : '';
-                $pdata['tags'] = !empty($raw['tags']) ? $raw['tags'] : '';
+                $tags = !empty($raw['tags']) ? $raw['tags'] : '';
+                $tss=array();
+                foreach ($tags as $tag){
+                    $ts=$tag->value;
+                    array_push($tss,$ts);
+                }
+                $pdata['tags']=implode(',',$tss);
                 $pdata['video'] = !empty($raw['video']) ? $raw['video'] : '';
                 if (!$this->post->checkPostInDB($complete_url)) {
-                    $this->post->addPost($pdata);
+                    $last_id=$this->post->addPost($pdata);
+                    if(!empty($last_id)){
+                        if(!empty($c_id)) {
+                            foreach ($c_id as $cat_id) {
+                                $this->post->addCategoryPost(array('category_id' => $cat_id, 'post_id' => $last_id));
+                            }
+                        }
+                    }
                     echo _success('Successfully added !', 'post', $pdata, 201);
                 } else {
                     echo _error("This post already exists in DB. If Content is different then change permalink text !", 409);
